@@ -12,6 +12,12 @@
   &:focus {
     border-color: $color-secondary;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 .label {
