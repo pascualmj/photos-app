@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
+import ThemeProvider from "./context/ThemeProvider";
 
 // SCSS: Reset, Normalize & Typo
 import "./assets/scss/normalize.scss";
@@ -13,7 +14,9 @@ import "./index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
