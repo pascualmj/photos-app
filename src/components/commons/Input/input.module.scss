@@ -1,0 +1,20 @@
+@import "../../../assets/scss/variables";
+
+.input {
+  width: 100%;
+  display: block;
+  outline: none;
+  border: 1px solid $color-divider;
+  border-radius: $border-radius;
+  height: 4rem;
+  padding: 0 1.5rem;
+
+  &:focus {
+    border-color: $color-secondary;
+  }
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
