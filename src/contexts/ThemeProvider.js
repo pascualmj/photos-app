@@ -1,4 +1,5 @@
 import React, { createContext, useState, useCallback } from "react";
+import PropTypes from "prop-types";
 
 import { theme } from "../config/constants";
 
@@ -23,6 +24,10 @@ const ThemeProvider = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
+};
+
+ThemeProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default ThemeProvider;
