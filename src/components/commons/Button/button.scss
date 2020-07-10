@@ -1,0 +1,15 @@
+@import "../../../assets/scss/variables";
+
+.button {
+  height: 4rem;
+  color: $color-absence;
+  border-radius: $border-radius;
+  background-color: $color-primary;
+  padding: 0 3rem;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+}
