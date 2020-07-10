@@ -18,7 +18,7 @@ const Input = ({
   return (
     <div className={className}>
       {!!label && (
-        <label for={uniqueIdentifier} className={styles.label}>
+        <label htmlFor={uniqueIdentifier} className={styles.label}>
           {label}
         </label>
       )}
