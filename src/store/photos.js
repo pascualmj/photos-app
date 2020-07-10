@@ -4,15 +4,15 @@ import { createSelector } from "reselect";
 const slice = createSlice({
   name: "photos",
   initialState: {
-    photos: [],
-    photo: {},
+    list: [],
+    details: {},
   },
   reducers: {
     photosFetched: (state, action) => {
-      state.photos.push(...action.payload);
+      state.list.push(...action.payload);
     },
     photoFetched: (state, action) => {
-      state.photo = action.payload;
+      state.details = action.payload;
     },
   },
 });
@@ -27,5 +27,5 @@ export default slice.reducer;
 export const getPhotoById = (photoId) =>
   createSelector(
     (state) => state.entities.photos,
-    (photos) => photos.find((photo) => photo.id === photoId)
+    (photos) => photos.list.find((photo) => photo.id === photoId)
   );
