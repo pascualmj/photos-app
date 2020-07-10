@@ -1,0 +1,21 @@
+@import "../../../assets/scss/variables";
+
+.text {
+  @each $key, $value in $colors-map {
+    &.color-#{$key} {
+      color: $value;
+    }
+  }
+
+  @each $id, $value in $sizes-map {
+    &.size-#{$id} {
+      font-size: $value;
+    }
+  }
+
+  @each $id, $value in $weights-map {
+    &.weight-#{$id} {
+      font-weight: $value;
+    }
+  }
+}

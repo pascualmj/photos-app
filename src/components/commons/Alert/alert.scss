@@ -1,0 +1,14 @@
+@import "../../../assets/scss/variables";
+
+.alert {
+  padding: 2.5rem 2rem;
+  text-align: center;
+
+  &.success {
+    background-color: $color-success;
+  }
+
+  &.error {
+    background-color: $color-error;
+  }
+}

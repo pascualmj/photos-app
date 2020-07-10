@@ -1,0 +1,10 @@
+@import "./assets/scss/variables";
+
+// Utilities: Margins
+@each $side in $sides {
+  @for $i from 1 through 10 {
+    .m#{str-slice($side, 1, 1)}-#{$i} {
+      margin-#{$side}: 1rem * $i;
+    }
+  }
+}
