@@ -1,0 +1,15 @@
+@import "../../assets/scss/variables";
+
+.container {
+  background-color: $color-lighter;
+  border-radius: $border-radius;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signout {
+  cursor: pointer;
+  margin-top: 0.4rem;
+}
