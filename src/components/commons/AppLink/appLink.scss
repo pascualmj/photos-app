@@ -1,0 +1,18 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.link {
+  font-size: $text-small;
+  color: $color-alternative;
+  @include transition(color 0.4s ease);
+
+  &:hover {
+    color: $color-full;
+  }
+
+  .material-icons {
+    position: relative;
+    top: 1px;
+    margin-right: 0.5rem;
+  }
+}
