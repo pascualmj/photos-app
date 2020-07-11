@@ -3,6 +3,7 @@
 .alert {
   padding: 2.5rem 2rem;
   text-align: center;
+  border-radius: $border-radius;
 
   &.success {
     background-color: $color-success;
