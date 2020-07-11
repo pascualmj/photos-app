@@ -1,3 +1,4 @@
 import generateRandomString from "./generateRandomString";
+import formatLinkToRoute from "./formatLinkToRoute";
 
-export { generateRandomString };
+export { generateRandomString, formatLinkToRoute };
