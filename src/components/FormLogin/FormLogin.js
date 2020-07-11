@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./formLogin.module.scss";
 
 import Input from "../commons/Input";
@@ -6,7 +7,14 @@ import Form from "../commons/Form";
 import Alert from "../commons/Alert";
 import Button from "../commons/Button";
 
-import { LOGIN_ERROR_CREDENTIALS } from "../../config/constants";
+import useGlobalStore from "../../hooks/useGlobalStore";
+import { loggedIn } from "../../store/auth";
+
+import {
+  LOGIN_ERROR_CREDENTIALS,
+  VALID_PASSWORD,
+} from "../../config/constants";
+import routes from "../../config/routes";
 
 const initialValues = {
   username: "",
@@ -16,9 +24,24 @@ const initialValues = {
 const FormLogin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const history = useHistory();
+  const { dispatch } = useGlobalStore();
 
   const handleSubmit = (values, cleanForm) => {
-    console.log(values);
+    setIsSubmitting(true);
+    setTimeout(() => {
+      if (values.password !== VALID_PASSWORD) {
+        setShowAlert(true);
+        setIsSubmitting(false);
+        return;
+      }
+      dispatch(
+        loggedIn({
+          username: values.username,
+        })
+      );
+      history.replace(routes.ROUTE_HOME);
+    }, 2000);
   };
 
   return (
