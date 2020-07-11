@@ -1,7 +1,7 @@
 import React from "react";
 
 const Details = () => {
-  return <div></div>;
+  return <div>Vista Detalle</div>;
 };
 
 export default Details;

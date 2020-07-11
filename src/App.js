@@ -1,12 +1,13 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Login from "./views/Login";
+import Routes from "./router/Routes";
 
 const App = () => {
   return (
-    <>
-      <Login />
-    </>
+    <Router>
+      <Routes />
+    </Router>
   );
 };
 
