@@ -2,11 +2,13 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import useGlobalStore from "../../hooks/useGlobalStore";
+
 import routes from "../../config/routes";
 
-const isAuthenticated = false;
-
 const PrivateRoute = ({ children, ...otherProps }) => {
+  const { isAuthenticated } = useGlobalStore();
+
   return (
     <Route
       {...otherProps}
