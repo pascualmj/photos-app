@@ -7,6 +7,7 @@ const Text = ({
   color = "full",
   weight = "regular",
   uppercase = false,
+  handleClick = null,
   children,
   className = "",
 }) => {
@@ -14,6 +15,7 @@ const Text = ({
     <p
       className={`text color-${color} size-${size} weight-${weight} ${className}`}
       {...(uppercase && { style: { textTransform: "uppercase" } })}
+      onClick={handleClick}
     >
       {children}
     </p>
@@ -39,6 +41,7 @@ Text.propTypes = {
     "title",
   ]),
   weight: PropTypes.oneOf(["regular", "bold"]),
+  handleClick: PropTypes.func,
   uppercase: PropTypes.bool,
   className: PropTypes.string,
 };
