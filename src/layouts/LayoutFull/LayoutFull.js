@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./layout.module.scss";
+import styles from "./layoutFull.module.scss";
 
 const LayoutFull = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <main className={styles.layout.content}>{children}</main>
+      <main className={styles.content}>{children}</main>
     </div>
   );
 };
