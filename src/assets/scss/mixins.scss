@@ -10,7 +10,7 @@
 }
 
 // Layouts
-@mixin layout($variant: "sidebar") {
+@mixin layout($variant: "default") {
   @if $variant == "full" {
     height: 100vh;
     display: flex;
@@ -18,9 +18,10 @@
     align-items: center;
     padding: 0 3rem;
   }
-  @if $variant == "sidebar" {
+  @if $variant == "default" {
     padding: 0 3rem;
     width: 100%;
     max-width: $layout-max-width;
+    margin: 0 auto;
   }
 }
