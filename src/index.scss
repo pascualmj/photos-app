@@ -8,3 +8,35 @@
     }
   }
 }
+
+// CSS Variables
+:root {
+  --color-primary: #ff3300;
+  --color-alternative: #3366cc;
+  --color-secondary: #999;
+  --color-divider: #dedede;
+  --color-absence: #fff;
+  --color-lighter: #f4f4f4;
+  --color-dark-lighter: #454545;
+  --color-full: #000;
+  --color-error: #ff3300;
+  --color-success: limegreen;
+}
+
+// Override CSS Variables for Global Dark Theme Mode is ON
+[data-theme-mode="dark"] {
+  --color-primary: #ff3300;
+  --color-alternative: #3366cc;
+  --color-secondary: #999;
+  --color-divider: #454545;
+  --color-absence: #000;
+  --color-lighter: #222;
+  --color-dark-lighter: #dedede;
+  --color-full: #fff;
+  --color-error: #ff3300;
+  --color-success: limegreen;
+}
+
+body {
+  background-color: $color-lighter;
+}
