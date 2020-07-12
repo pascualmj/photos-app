@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import Login from "../views/Login";
 import Home from "../views/Home";
@@ -18,6 +18,7 @@ const Routes = () => {
       <PrivateRoute path={routes.ROUTE_PHOTOS_DETAILS}>
         <Details />
       </PrivateRoute>
+      <Route render={() => <Redirect to={routes.ROUTE_HOME} />} />
     </Switch>
   );
 };
