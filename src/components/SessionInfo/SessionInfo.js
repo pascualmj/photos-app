@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import styles from "./sessionInfo.module.scss";
 
 import Text from "../commons/Text";
+import ThemeToggler from "../ThemeToggler";
 import ProfileImage from "../ProfileImage";
 
 import useGlobalStore from "../../hooks/useGlobalStore";
@@ -31,6 +32,7 @@ const SessionInfo = () => {
       >
         Sign out
       </Text>
+      <ThemeToggler />
     </section>
   );
 };
