@@ -1,7 +1,14 @@
 import React from "react";
 
+import LayoutDefault from "../layouts/LayoutDefault";
+import PhotoDetails from "../components/PhotoDetails";
+
 const Details = () => {
-  return <div>Vista Detalle</div>;
+  return (
+    <LayoutDefault>
+      <PhotoDetails />
+    </LayoutDefault>
+  );
 };
 
 export default Details;
