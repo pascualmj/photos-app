@@ -1,0 +1,46 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+
+.toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  cursor: pointer;
+
+  .on,
+  .off {
+    display: inherit;
+  }
+
+  .toggler-element {
+    background-color: $color-divider;
+    position: relative;
+    height: 3rem;
+    border-radius: 1.5rem;
+    margin: 0 1rem;
+    flex: 0 0 6rem;
+
+    &.active {
+      background-color: $color-alternative;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      background-color: $color-secondary;
+      @include transition(left 0.4s ease);
+    }
+
+    &.active::after {
+      left: 3.5rem;
+      background-color: $color-absence;
+    }
+  }
+}
