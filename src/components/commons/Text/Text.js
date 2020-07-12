@@ -8,7 +8,7 @@ const Text = ({
   weight = "regular",
   uppercase = false,
   handleClick = null,
-  children,
+  children = "",
   className = "",
 }) => {
   return (
@@ -23,7 +23,7 @@ const Text = ({
 };
 
 Text.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   color: PropTypes.oneOf([
     "full",
     "primary",
