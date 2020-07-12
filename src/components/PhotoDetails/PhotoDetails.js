@@ -6,14 +6,17 @@ import "./photoDetails.scss";
 
 import Text from "../commons/Text";
 import Preloader from "../Preloader";
+import Alert from "../commons/Alert";
 
 import useGlobalStore from "../../hooks/useGlobalStore";
 import { photoFetched, getPhotoById } from "../../store/photos";
 import routes from "../../config/routes";
 import { getPhoto } from "../../services/photoService";
+import { FETCH_ERROR_PHOTOS } from "../../config/constants";
 
 const PhotoDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const { dispatch, photo } = useGlobalStore();
   const { id: photoId } = useParams();
   const photoFromStore = useSelector(getPhotoById(photoId));
@@ -30,11 +33,13 @@ const PhotoDetails = () => {
           setIsLoading(false);
         })
         .catch((error) => {
-          console.log(error.response);
+          setShowAlert(true);
           setIsLoading(false);
         });
     }
   }, [dispatch, photoId, photoFromStore]);
+
+  if (showAlert) return <Alert text={FETCH_ERROR_PHOTOS} type="error" />;
 
   return (
     <section className="photo-details">
