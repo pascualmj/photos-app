@@ -17,22 +17,23 @@ const SessionInfo = () => {
 
   return (
     <section className={styles.container}>
-      <ProfileImage
-        imgUrl={require("../../assets/img/profile_pic.jpg")}
-        alt="urbetrack"
-      />
-      <Text size="bigger" color="alternative" weight="bold" className="mt-2">
-        {userData.username}
-      </Text>
-      <Text
-        size="small"
-        color="primary"
-        className={styles.signout}
-        handleClick={logout}
-      >
-        Sign out
-      </Text>
-      <ThemeToggler />
+      <div className={styles.left}>
+        <ProfileImage
+          imgUrl={require("../../assets/img/profile_pic.jpg")}
+          alt="profile-picture"
+        />
+        <div className={styles.usernameContainer}>
+          <Text color="alternative" weight="bold">
+            {userData.username}
+          </Text>
+          <Text size="small" color="primary" handleClick={logout}>
+            Sign out
+          </Text>
+        </div>
+      </div>
+      <div className={styles.themeToggler}>
+        <ThemeToggler />
+      </div>
     </section>
   );
 };

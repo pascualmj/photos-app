@@ -4,17 +4,35 @@
   @include layout();
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    margin-top: 10rem;
+    flex-direction: row;
+  }
 }
 
 .aside {
-  flex: 0 0 26rem;
+  align-self: stretch;
   position: -webkit-sticky;
   position: sticky;
+  z-index: 1;
   top: 0;
-  padding-top: 3rem;
+  margin: -3rem -3rem 0 -3rem;
+
+  @media (min-width: 768px) {
+    align-self: initial;
+    padding-top: 3rem;
+    flex: 0 0 26rem;
+    margin: 0;
+  }
 }
 
 .content {
   flex: 1 1 auto;
-  padding: 3rem 0 0 4rem;
+  padding: 8rem 0 6rem;
+
+  @media (min-width: 768px) {
+    padding: 3rem 0 6rem 4rem;
+  }
 }

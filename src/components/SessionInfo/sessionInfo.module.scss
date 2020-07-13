@@ -1,15 +1,84 @@
 @import "../../assets/scss/variables";
 
 .container {
-  background-color: $color-lighter;
+  background-color: $color-absence;
   border-radius: $border-radius;
-  padding: 4rem 3rem;
+  padding: 0 3rem;
+  height: 7rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    padding: 4rem 3rem;
+    height: auto;
+  }
 }
 
-.signout {
-  cursor: pointer;
-  margin-top: 0.4rem;
+.left {
+  display: flex;
+  align-items: center;
+
+  figure {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.3rem;
+
+    @media (min-width: 768px) {
+      padding: 0.6rem;
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.usernameContainer {
+  margin-left: 1rem;
+
+  p {
+    margin: 0;
+
+    &:first-child {
+      font-size: $text-regular;
+      width: 12rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (min-width: 768px) {
+        width: 16rem;
+        font-size: $text-bigger;
+        margin-top: 2rem;
+      }
+    }
+
+    &:last-child {
+      cursor: pointer;
+      @media (min-width: 768px) {
+        margin-top: 0.4rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.themeToggler {
+  width: 11rem;
+
+  & > div {
+    margin-top: 0;
+
+    @media (min-width: 768px) {
+      margin-top: 3rem;
+    }
+  }
 }

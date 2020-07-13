@@ -6,7 +6,7 @@ import SessionInfo from "../../components/SessionInfo";
 
 const LayoutFull = ({ children }) => {
   return (
-    <div className={styles.layout + " mt-10"}>
+    <div className={styles.layout}>
       <div className={styles.aside}>
         <SessionInfo />
       </div>
