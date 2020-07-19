@@ -1,5 +1,5 @@
 const isLastPage = (linkResponseHeader) => {
-  return linkResponseHeader.split(",")[1] === undefined;
+  return !linkResponseHeader.includes(`rel="next"`);
 };
 
 export default isLastPage;

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 import "./photoDetails.scss";
@@ -9,41 +8,23 @@ import Preloader from "../Preloader";
 import Alert from "../commons/Alert";
 
 import useGlobalStore from "../../hooks/useGlobalStore";
-import { photoFetched, getPhotoById } from "../../store/photos";
+import { fetchPhoto } from "../../store/photos";
 import routes from "../../config/routes";
-import { getPhoto } from "../../services/photoService";
 import { FETCH_ERROR_PHOTOS } from "../../config/constants";
 
 const PhotoDetails = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
-  const { dispatch, photo } = useGlobalStore();
+  const { dispatch, photo, loading, error } = useGlobalStore();
   const { id: photoId } = useParams();
-  const photoFromStore = useSelector(getPhotoById(photoId));
 
   useEffect(() => {
-    setIsLoading(true);
-    if (photoFromStore) {
-      dispatch(photoFetched(photoFromStore));
-      setIsLoading(false);
-    } else {
-      getPhoto(photoId)
-        .then(({ data }) => {
-          dispatch(photoFetched(data));
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setShowAlert(true);
-          setIsLoading(false);
-        });
-    }
-  }, [dispatch, photoId, photoFromStore]);
+    dispatch(fetchPhoto(photoId));
+  }, [dispatch, photoId]);
 
-  if (showAlert) return <Alert text={FETCH_ERROR_PHOTOS} type="error" />;
+  if (error) return <Alert text={FETCH_ERROR_PHOTOS} type="error" />;
 
   return (
     <section className="photo-details">
-      {isLoading ? (
+      {loading ? (
         <Preloader />
       ) : (
         <>
